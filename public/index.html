@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html>
+    <head>
+        <title>My first Vue page</title>
+        <style>
+            .pinkBG {
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Vue Example</h1>
+        <p> the message is taken from 'data' inside the Vue instance by writing {{ message }} nside the div with id="app".</p>
+        <div id="app">
+
+        </div>
+        <p>cover cover</p>
+        <noscript>
+<!--            The <noscript> tag is used to provide alternative content for users who do not support or have disabled JavaScript.-->
+            <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+<!--        if we utilize vue in html file, we should use this one. -->
+<!--        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </body>
 </html>
