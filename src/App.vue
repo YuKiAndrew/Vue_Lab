@@ -39,16 +39,24 @@
     </div>
     <button v-on:click="lighton = !lighton">turn on light</button>
   </div>
-
+  <div>
+    <input v-on:input="inputCount++">
+    <p>{{"input event occured:" +  inputCount}}</p>
+  </div>
+  <VonTest msg="VonTest file will conduct several experiments using v-on command"></VonTest>
+  <Differet></Differet>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import VonTest from './components/VonTest.vue'
+import Differet from './components/Different.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    VonTest,
+    Differet
   },
   data() {
     return {
@@ -72,7 +80,8 @@ export default {
       ],
       count: 0,
       methodCount: 0,
-      lighton : false
+      lighton : false,
+      inputCount: 0
     }
   },
   methods: {
@@ -92,4 +101,22 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.writeText {
+  width: 400px;
+  height: 60px;
+  background-color: lightgreen;
+  padding: 20px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+.textArea {
+  width: 200px;
+  height: 40px;
+  background-color: coral;
+  text-align: center;
+  padding: 20px;
+  font-weight: bolder;
+}
+
 </style>
