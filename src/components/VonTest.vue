@@ -17,6 +17,16 @@
       <input type="number" v-on:input="seeMoose">
       <p>the number of moose: {{mooseNum}}</p>
     </div> <br>
+    <div id="buttonList">
+      <button v-on:click="addMoose($event,+1)">+1</button>
+      <button v-on:click="addMoose($event,+5)">+5</button>
+      <button v-on:click="addMoose($event,-1)">-1</button>
+    </div>
+    <div id="trigger id">
+      <button v-on:click="messageMethod($event, 'hello')">event test</button>
+      <p>Here is the message sent with the method, and the id of the img tag:</p>
+      <p> {{message}}</p>
+    </div>
   </div>
 </template>
 
@@ -54,7 +64,8 @@ export default {
       xPos: 0,
       yPos: 0,
       textArea: '',
-      mooseNum: 0
+      mooseNum: 0,
+      message: "init"
     }
   },
   methods: {
@@ -73,6 +84,15 @@ export default {
       if (!isNaN(num)) {
         this.mooseNum = num + this.mooseNum
       }
+    },
+    addMoose(event,num) {
+      console.log("event:",event)
+      if (!isNaN(num)) {
+        this.mooseNum = num + this.mooseNum
+      }
+    },
+    messageMethod(e,message) {
+      this.message = this.message + ',' + message
     }
   }
 }

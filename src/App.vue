@@ -45,18 +45,24 @@
   </div>
   <VonTest msg="VonTest file will conduct several experiments using v-on command"></VonTest>
   <Differet></Differet>
+  <CountAnimals isShow="false"></CountAnimals>
+  <EventModifier isShow="true"></EventModifier>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import VonTest from './components/VonTest.vue'
 import Differet from './components/Different.vue'
+import CountAnimals from "@/components/CountAnimals.vue";
+import EventModifier  from "@/components/EventModifier.vue";
 export default {
   name: 'App',
   components: {
     HelloWorld,
     VonTest,
-    Differet
+    Differet,
+    CountAnimals,
+    EventModifier
   },
   data() {
     return {
