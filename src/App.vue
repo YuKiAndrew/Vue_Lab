@@ -46,9 +46,10 @@
   <VonTest msg="VonTest file will conduct several experiments using v-on command"></VonTest>
   <Differet></Differet>
   <CountAnimals :isShow=false></CountAnimals>
-  <EventModifier :isShow=true></EventModifier>
-  <FormVue :isShow=true></FormVue>
-  <VModelTest :isShow=true></VModelTest>
+  <EventModifier :isShow=false></EventModifier>
+  <FormVue :isShow=false></FormVue>
+  <VModelTest :isShow=false></VModelTest>
+  <vue-css-b :is-show=true></vue-css-b>
 </template>
 
 <script>
@@ -59,6 +60,7 @@ import CountAnimals from "@/components/CountAnimals.vue";
 import EventModifier  from "@/components/EventModifier.vue";
 import FormVue from "@/components/FormVue.vue";
 import VModelTest from "@/components/VModelTest.vue"
+import vueCssB from "@/components/VueCssBinding.vue"
 
 export default {
   name: 'App',
@@ -69,7 +71,8 @@ export default {
     CountAnimals,
     EventModifier,
     FormVue,
-    VModelTest
+    VModelTest,
+    vueCssB
   },
   data() {
     return {

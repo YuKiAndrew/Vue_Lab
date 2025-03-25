@@ -88,7 +88,7 @@
         </select>
       </label>
       </p>
-      <img v-bind:src="itemUrl">
+      <img v-bind:src="itemUrl" alt="item Url">
       <p v-show="itemName">
         <input type="number" placeholder="How many?" v-model="itemN" required>
       </p>
@@ -99,7 +99,7 @@
     <div>
       <ul id="ulToFind">
         <li v-for="item in order" v-bind:key="item">
-          {{item.name}}, {{item.number}} <img v-bind:src="item.url">
+          {{item.name}}, {{item.number}} <img v-bind:src="item.url" alt="item url">
         </li>
       </ul>
     </div>
