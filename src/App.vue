@@ -51,6 +51,7 @@
   <VModelTest :isShow=false></VModelTest>
   <vue-css-b :is-show=true></vue-css-b>
   <vue-computed :is-show="true"></vue-computed>
+  <vue-watch :is-show="true"></vue-watch>
 </template>
 
 <script>
@@ -63,6 +64,7 @@ import FormVue from "@/components/FormVue.vue";
 import VModelTest from "@/components/VModelTest.vue"
 import vueCssB from "@/components/VueCssBinding.vue"
 import vueComputed from "@/components/ComputedProperties.vue"
+import vueWatch from "@/components/WatcherTest.vue"
 
 export default {
   name: 'App',
@@ -75,7 +77,8 @@ export default {
     FormVue,
     VModelTest,
     vueCssB,
-    vueComputed
+    vueComputed,
+    vueWatch
   },
   data() {
     return {
