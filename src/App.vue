@@ -50,6 +50,7 @@
   <FormVue :isShow=false></FormVue>
   <VModelTest :isShow=false></VModelTest>
   <vue-css-b :is-show=true></vue-css-b>
+  <vue-computed :is-show="true"></vue-computed>
 </template>
 
 <script>
@@ -61,6 +62,7 @@ import EventModifier  from "@/components/EventModifier.vue";
 import FormVue from "@/components/FormVue.vue";
 import VModelTest from "@/components/VModelTest.vue"
 import vueCssB from "@/components/VueCssBinding.vue"
+import vueComputed from "@/components/ComputedProperties.vue"
 
 export default {
   name: 'App',
@@ -72,7 +74,8 @@ export default {
     EventModifier,
     FormVue,
     VModelTest,
-    vueCssB
+    vueCssB,
+    vueComputed
   },
   data() {
     return {
