@@ -43,6 +43,7 @@
     <input v-on:input="inputCount++">
     <p>{{"input event occured:" +  inputCount}}</p>
   </div>
+
   <VonTest msg="VonTest file will conduct several experiments using v-on command"></VonTest>
   <Differet></Differet>
   <CountAnimals :isShow=false></CountAnimals>
@@ -52,6 +53,24 @@
   <vue-css-b :is-show=true></vue-css-b>
   <vue-computed :is-show="true"></vue-computed>
   <vue-watch :is-show="true"></vue-watch>
+  <vue-temp :is-show="true"></vue-temp>
+  <h1>Props Test: Food</h1>
+  <p>My favorite food has a diploma image attached to it.</p>
+  <div id="wrapper">
+    <vue-props-test
+        food-name="Apples"
+        food-desc="Apples are a type of fruit that grow on trees."
+        v-bind:is-favorite="true"/>
+    <vue-props-test
+        food-name="Pizza"
+        food-desc="Pizza has a bread base with tomato sauce, cheese, and toppings on top."
+        v-bind:is-favorite="true"/>
+    <input type="text" v-model="foodDes">
+    <vue-props-test
+        food-name="Rice"
+        :food-desc= "foodDes"
+        v-bind:is-favorite="true"/>
+  </div>
 </template>
 
 <script>
@@ -65,6 +84,8 @@ import VModelTest from "@/components/VModelTest.vue"
 import vueCssB from "@/components/VueCssBinding.vue"
 import vueComputed from "@/components/ComputedProperties.vue"
 import vueWatch from "@/components/WatcherTest.vue"
+import vueTemp from "@/components/VueTemplate.vue"
+import VuePropsTest from "@/components/VuePropsTest.vue"
 
 export default {
   name: 'App',
@@ -78,7 +99,9 @@ export default {
     VModelTest,
     vueCssB,
     vueComputed,
-    vueWatch
+    vueWatch,
+    vueTemp,
+    VuePropsTest
   },
   data() {
     return {
@@ -103,7 +126,8 @@ export default {
       count: 0,
       methodCount: 0,
       lighton : false,
-      inputCount: 0
+      inputCount: 0,
+      foodDes: null
     }
   },
   methods: {
