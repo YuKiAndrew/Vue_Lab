@@ -8,7 +8,7 @@
     <p>{{ foodDesc }}</p>
   </div>
   <div id="changeProp">
-    <p>{{this.foodIsFavorite}}</p>
+    <p>{{foodIsFavorite}}</p>
     is it food your favorite?
     <br>
     <button @click="toggleFavorite">Favorite</button>
@@ -20,7 +20,7 @@ export default {
   props: {
     foodName: {
       type: String,
-      required: true,
+      required: false,
       default: "juice"
     },
     foodDesc: {
@@ -31,7 +31,10 @@ export default {
         return 20 < value.length && value.length < 50;
       }
     },
-    isFavorite: Boolean
+    isFavorite: {
+      type:String,
+      default: "true"
+    }
   },
   watch: {
     foodDesc(newVal) {
@@ -41,6 +44,9 @@ export default {
         this.validationErrors.foodDesc = '';
       }
     }
+  },
+  mounted() {
+    console.log(this.foodName)
   },
   methods: {
     validationFoodDesc(value) {

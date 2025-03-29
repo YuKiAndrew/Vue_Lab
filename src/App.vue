@@ -71,6 +71,7 @@
         :food-desc= "foodDes"
         v-bind:is-favorite="true"/>
   </div>
+  <v-for-vue></v-for-vue>
 </template>
 
 <script>
@@ -86,6 +87,7 @@ import vueComputed from "@/components/ComputedProperties.vue"
 import vueWatch from "@/components/WatcherTest.vue"
 import vueTemp from "@/components/VueTemplate.vue"
 import VuePropsTest from "@/components/VuePropsTest.vue"
+import VForVue  from "@/components/VForVue.vue";
 
 export default {
   name: 'App',
@@ -101,7 +103,8 @@ export default {
     vueComputed,
     vueWatch,
     vueTemp,
-    VuePropsTest
+    VuePropsTest,
+    VForVue
   },
   data() {
     return {
