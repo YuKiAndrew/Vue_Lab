@@ -39,16 +39,72 @@
     </div>
     <button v-on:click="lighton = !lighton">turn on light</button>
   </div>
+  <div>
+    <input v-on:input="inputCount++">
+    <p>{{"input event occured:" +  inputCount}}</p>
+  </div>
 
+  <VonTest msg="VonTest file will conduct several experiments using v-on command"></VonTest>
+  <Differet></Differet>
+  <CountAnimals :isShow=false></CountAnimals>
+  <EventModifier :isShow=false></EventModifier>
+  <FormVue :isShow=false></FormVue>
+  <VModelTest :isShow=false></VModelTest>
+  <vue-css-b :is-show=true></vue-css-b>
+  <vue-computed :is-show="true"></vue-computed>
+  <vue-watch :is-show="true"></vue-watch>
+  <vue-temp :is-show="true"></vue-temp>
+  <h1>Props Test: Food</h1>
+  <p>My favorite food has a diploma image attached to it.</p>
+  <div id="wrapper">
+    <vue-props-test
+        food-name="Apples"
+        food-desc="Apples are a type of fruit that grow on trees."
+        v-bind:is-favorite="true"/>
+    <vue-props-test
+        food-name="Pizza"
+        food-desc="Pizza has a bread base with tomato sauce, cheese, and toppings on top."
+        v-bind:is-favorite="true"/>
+    <input type="text" v-model="foodDes">
+    <vue-props-test
+        food-name="Rice"
+        :food-desc= "foodDes"
+        v-bind:is-favorite="true"/>
+  </div>
+  <v-for-vue></v-for-vue>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import VonTest from './components/VonTest.vue'
+import Differet from './components/Different.vue'
+import CountAnimals from "@/components/CountAnimals.vue";
+import EventModifier  from "@/components/EventModifier.vue";
+import FormVue from "@/components/FormVue.vue";
+import VModelTest from "@/components/VModelTest.vue"
+import vueCssB from "@/components/VueCssBinding.vue"
+import vueComputed from "@/components/ComputedProperties.vue"
+import vueWatch from "@/components/WatcherTest.vue"
+import vueTemp from "@/components/VueTemplate.vue"
+import VuePropsTest from "@/components/VuePropsTest.vue"
+import VForVue  from "@/components/VForVue.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    VonTest,
+    Differet,
+    CountAnimals,
+    EventModifier,
+    FormVue,
+    VModelTest,
+    vueCssB,
+    vueComputed,
+    vueWatch,
+    vueTemp,
+    VuePropsTest,
+    VForVue
   },
   data() {
     return {
@@ -72,7 +128,9 @@ export default {
       ],
       count: 0,
       methodCount: 0,
-      lighton : false
+      lighton : false,
+      inputCount: 0,
+      foodDes: null
     }
   },
   methods: {
@@ -92,4 +150,22 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.writeText {
+  width: 400px;
+  height: 60px;
+  background-color: lightgreen;
+  padding: 20px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+.textArea {
+  width: 200px;
+  height: 40px;
+  background-color: coral;
+  text-align: center;
+  padding: 20px;
+  font-weight: bolder;
+}
+
 </style>
