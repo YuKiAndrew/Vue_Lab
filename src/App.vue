@@ -72,6 +72,7 @@
         v-bind:is-favorite="true"/>
   </div>
   <v-for-vue></v-for-vue>
+  <EmitCalculateMain :isShow="false"></EmitCalculateMain>
 </template>
 
 <script>
@@ -88,6 +89,7 @@ import vueWatch from "@/components/WatcherTest.vue"
 import vueTemp from "@/components/VueTemplate.vue"
 import VuePropsTest from "@/components/VuePropsTest.vue"
 import VForVue  from "@/components/VForVue.vue";
+import EmitCalculateMain  from "@/components/EmitCalculateMain.vue";
 
 export default {
   name: 'App',
@@ -104,7 +106,8 @@ export default {
     vueWatch,
     vueTemp,
     VuePropsTest,
-    VForVue
+    VForVue,
+    EmitCalculateMain
   },
   data() {
     return {

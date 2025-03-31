@@ -32,8 +32,8 @@ export default {
       }
     },
     isFavorite: {
-      type:String,
-      default: "true"
+      type:Boolean,
+      default: true
     }
   },
   watch: {
