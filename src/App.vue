@@ -73,6 +73,7 @@
   </div>
   <v-for-vue></v-for-vue>
   <EmitCalculateMain :isShow="false"></EmitCalculateMain>
+  <FallThroughAttri></FallThroughAttri>
 </template>
 
 <script>
@@ -90,6 +91,7 @@ import vueTemp from "@/components/VueTemplate.vue"
 import VuePropsTest from "@/components/VuePropsTest.vue"
 import VForVue  from "@/components/VForVue.vue";
 import EmitCalculateMain  from "@/components/EmitCalculateMain.vue";
+import FallThroughAttri from "@/components/FallThroughAttri.vue";
 
 export default {
   name: 'App',
@@ -107,7 +109,8 @@ export default {
     vueTemp,
     VuePropsTest,
     VForVue,
-    EmitCalculateMain
+    EmitCalculateMain,
+    FallThroughAttri
   },
   data() {
     return {

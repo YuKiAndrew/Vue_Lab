@@ -37,7 +37,6 @@ export default {
       this.$emit('is-find', foundfood)
     }
   },
-  emits: ['is-find','calculate-result'],
   data() {
     return {
       m1: 0,
