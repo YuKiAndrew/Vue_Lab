@@ -9,7 +9,7 @@ export default {
   <div class="pink"></div>
 </template>
 
-<style>
+<style scoped>
 li {
   margin: 0;
   border-radius: 10px;
