@@ -74,6 +74,7 @@
   <v-for-vue></v-for-vue>
   <EmitCalculateMain :isShow="false"></EmitCalculateMain>
   <FallThroughAttri></FallThroughAttri>
+  <slot-component></slot-component>
 </template>
 
 <script>
@@ -92,6 +93,7 @@ import VuePropsTest from "@/components/VuePropsTest.vue"
 import VForVue  from "@/components/VForVue.vue";
 import EmitCalculateMain  from "@/components/EmitCalculateMain.vue";
 import FallThroughAttri from "@/components/FallThroughAttri.vue";
+import slotComponent from "@/components/SlotComponent.vue";
 
 export default {
   name: 'App',
@@ -110,7 +112,8 @@ export default {
     VuePropsTest,
     VForVue,
     EmitCalculateMain,
-    FallThroughAttri
+    FallThroughAttri,
+    slotComponent
   },
   data() {
     return {

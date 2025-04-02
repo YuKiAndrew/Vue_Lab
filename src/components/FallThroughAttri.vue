@@ -12,6 +12,7 @@
   </ul>
   <input placeholder="Add things to do here" v-model="newItem" v-on:keydown.enter="addItem">
   <button v-on:click="addItem">Add</button>
+  <br>
 </template>
 <script>
 import TodoItem from "@/components/TodoItem.vue";
