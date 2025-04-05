@@ -75,6 +75,13 @@
   <EmitCalculateMain :isShow="false"></EmitCalculateMain>
   <FallThroughAttri></FallThroughAttri>
   <slot-component></slot-component>
+  <h1>Scoped Slots</h1>
+  <p>App.vue controls how local data from the scoped slot is rendered.</p>
+  <slot-scope-t v-slot="food">
+    <hr>
+    <h2>{{ food.foodName }}<img :src=food.foodUrl></h2>
+    <p class="greenP">{{ food.foodDesc }}</p>
+  </slot-scope-t>
 </template>
 
 <script>
@@ -94,6 +101,7 @@ import VForVue  from "@/components/VForVue.vue";
 import EmitCalculateMain  from "@/components/EmitCalculateMain.vue";
 import FallThroughAttri from "@/components/FallThroughAttri.vue";
 import slotComponent from "@/components/SlotComponent.vue";
+import slotScopeT from "@/components/SlotScopeT.vue";
 
 export default {
   name: 'App',
@@ -113,7 +121,8 @@ export default {
     VForVue,
     EmitCalculateMain,
     FallThroughAttri,
-    slotComponent
+    slotComponent,
+    slotScopeT
   },
   data() {
     return {
@@ -176,5 +185,6 @@ export default {
   padding: 20px;
   font-weight: bolder;
 }
+
 
 </style>

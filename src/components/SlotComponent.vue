@@ -7,7 +7,7 @@
     <vue-slot>Change our mind, find new world</vue-slot>
   </div>
   <div id="wrapper">
-    <vue-slot v-for="x in foods">
+    <vue-slot v-for="x in foods" v-bind:key="x">
       <img v-bind:src="x.url" alt="x.name">
       <h4>{{x.name}}</h4>
       <p>{{x.desc}}</p>
@@ -19,12 +19,18 @@
   <div id="testVSlot">
     <h1>Test VSlot</h1>
     <p>The Component has two div tags with one slot in each.</p>
-    <VSlot v-slot:topSlot>'Hi!'</VSlot>
+    <VSlot >
+      <template v-slot:topSlot>
+        'Hi!'
+      </template>
+    </VSlot>
   </div>
   <div id="defaultslot">
     <h4>Test default slot</h4>
     <p>There are default slot in here</p>
-    <VSlot v-slot:default>'This is default slot'</VSlot>
+    <VSlot>
+      <template v-slot:default>'This is default slot'</template>
+    </VSlot>
   </div>
   <div id="templateSlot">
     <h4>Test template slot</h4>
@@ -37,7 +43,27 @@
     </VSlot>
   </div>
   <div id="shortHandForSlot">
-    <VSlot #default>'Hello with pun sign'</VSlot>
+    <VSlot>
+      <template #default>
+        'Hello with pun sign'
+      </template>
+    </VSlot>
+  </div>
+  <hr/>
+  <div id="slotScope">
+    <slot-scope v-slot="dataFromSlot">
+      <h2>{{ dataFromSlot.lclData}}</h2>
+    </slot-scope>
+  </div>
+  <div id="slotScopeWithVFor">
+    <h1>Scoped Slot</h1>
+    <p>App.vue controls how local data from the scoped slot is rendered.</p>
+    <br>
+    <slot-scope-t>
+      <template v-slot:slotWithName="text">
+        <p>{{text.dynamicText}}</p>
+      </template>
+    </slot-scope-t>
   </div>
   <footer>
     <vue-slot>
@@ -47,17 +73,24 @@
 </template>
 
 <script>
+
 import VueSlot from "@/components/VueSlot.vue";
 import breakfast from "@/assets/food collection/breakfast_img.png"
 import drums from "@/assets/food collection/drumsticks.png"
 import fast_food from "@/assets/food collection/fast_food.png"
 import VSlot from "@/components/VSlot.vue";
+import slotScope from "@/components/SlotScope.vue";
+import slotScopeT from "@/components/SlotScopeT.vue";
+
 
 export default {
   name: "SlotsComp",
   components: {
     VueSlot,
-    VSlot
+    VSlot,
+    slotScope,
+    slotScopeT
+
   },
   data() {
     return {
@@ -81,4 +114,5 @@ p {
   margin: 10px;
   padding: 10px;
 }
+
 </style>
