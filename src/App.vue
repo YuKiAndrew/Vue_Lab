@@ -82,6 +82,7 @@
     <h2>{{ food.foodName }}<img :src=food.foodUrl></h2>
     <p class="greenP">{{ food.foodDesc }}</p>
   </slot-scope-t>
+  <dynamic-component></dynamic-component>
 </template>
 
 <script>
@@ -102,6 +103,7 @@ import EmitCalculateMain  from "@/components/EmitCalculateMain.vue";
 import FallThroughAttri from "@/components/FallThroughAttri.vue";
 import slotComponent from "@/components/SlotComponent.vue";
 import slotScopeT from "@/components/SlotScopeT.vue";
+import dynamicComponent from "@/components/DynamicComponent.vue";
 
 export default {
   name: 'App',
@@ -122,7 +124,8 @@ export default {
     EmitCalculateMain,
     FallThroughAttri,
     slotComponent,
-    slotScopeT
+    slotScopeT,
+    dynamicComponent
   },
   data() {
     return {

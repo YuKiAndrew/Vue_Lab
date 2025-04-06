@@ -62,6 +62,8 @@
     <slot-scope-t>
       <template v-slot:slotWithName="text">
         <p>{{text.dynamicText}}</p>
+        <br>
+        <p>{{text.staticText}}</p>
       </template>
     </slot-scope-t>
   </div>
