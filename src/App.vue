@@ -83,6 +83,7 @@
     <p class="greenP">{{ food.foodDesc }}</p>
   </slot-scope-t>
   <dynamic-component></dynamic-component>
+  <TeleportVue></TeleportVue>
 </template>
 
 <script>
@@ -104,6 +105,7 @@ import FallThroughAttri from "@/components/FallThroughAttri.vue";
 import slotComponent from "@/components/SlotComponent.vue";
 import slotScopeT from "@/components/SlotScopeT.vue";
 import dynamicComponent from "@/components/DynamicComponent.vue";
+import TeleportVue  from "@/components/TeleportVue.vue";
 
 export default {
   name: 'App',
@@ -125,7 +127,8 @@ export default {
     FallThroughAttri,
     slotComponent,
     slotScopeT,
-    dynamicComponent
+    dynamicComponent,
+    TeleportVue
   },
   data() {
     return {
