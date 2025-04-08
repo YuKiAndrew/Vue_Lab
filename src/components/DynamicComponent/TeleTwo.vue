@@ -4,7 +4,7 @@
   <div>
     <h2>Component</h2>
     <p>This is the inside of the component.</p>
-    <Teleport to="#TeleportTwo">
+    <Teleport to="#Teleport">
       <div
           id="redDiv"
           @click="toggleVal = !toggleVal"
