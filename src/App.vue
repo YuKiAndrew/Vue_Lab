@@ -85,7 +85,7 @@
   <dynamic-component></dynamic-component>
   <TeleportVue></TeleportVue>
   <request-vue></request-vue>
-
+  <template-vue></template-vue>
 </template>
 
 <script>
@@ -109,6 +109,7 @@ import slotScopeT from "@/components/SlotScopeT.vue";
 import dynamicComponent from "@/components/DynamicComponent.vue";
 import TeleportVue  from "@/components/TeleportVue.vue";
 import requestVue from "@/components/HttpRequestVue.vue";
+import templateVue from "@/components/TemplateVue.vue";
 
 export default {
   name: 'App',
@@ -132,7 +133,8 @@ export default {
     slotScopeT,
     dynamicComponent,
     TeleportVue,
-    requestVue
+    requestVue,
+    templateVue
   },
   data() {
     return {
