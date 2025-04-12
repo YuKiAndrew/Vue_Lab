@@ -86,6 +86,9 @@
   <TeleportVue></TeleportVue>
   <request-vue></request-vue>
   <template-vue></template-vue>
+  <hr>
+  <h1>Life Cycle Test</h1>
+  <life-cycle-hooks :isShow="true"></life-cycle-hooks>
 </template>
 
 <script>
@@ -110,6 +113,7 @@ import dynamicComponent from "@/components/DynamicComponent.vue";
 import TeleportVue  from "@/components/TeleportVue.vue";
 import requestVue from "@/components/HttpRequestVue.vue";
 import templateVue from "@/components/TemplateVue.vue";
+import LifeCycleHooks from "@/components/LifeCycleHooks.vue";
 
 export default {
   name: 'App',
@@ -134,7 +138,8 @@ export default {
     dynamicComponent,
     TeleportVue,
     requestVue,
-    templateVue
+    templateVue,
+    LifeCycleHooks
   },
   data() {
     return {
